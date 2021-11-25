@@ -1,0 +1,34 @@
+header {
+  text-align: center;
+  border-bottom: solid 2px black;
+}
+.kosmo {
+  padding: 5px 10px 5px 15px;
+}
+.kosmo a {
+  text-decoration: none;
+  color: black;
+}
+.kosmo a:hover {
+  background-color: lightyellow;
+  color: gray;
+}
+.kosmo ul {
+  padding: 0;
+  margin: 0;
+}
+.kosmo li {
+  list-style-type: none;
+  padding-bottom: 15px;
+  padding-left: 15px;
+}
+.left {
+  float: left;
+  padding-right: 30px;
+}
+.clear {
+  clear: both;
+}
+#ex li {
+  display: inline;
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>1부터 100까지 합(while, do-while, break)</title>
+  </head>
+  <body>
+    <p>1~100까지 합(while)</p>
+    <script>
+      var x = 1;
+      var sum = 0;
+      while (x <= 100) {
+        sum += x;
+        x++;
+      }
+      document.write("sum 1 ~ 100 : <b> " + sum + "</b>");
+    </script>
+    <br /><br /><br />
+
+    <p>1~10000까지 합(while)</p>
+    <script>
+      var x = 1;
+      var sum = 0;
+      while (1) {
+        sum += x;
+        x++;
+        if (x == 10001) {
+          break;
+        }
+      }
+      document.write("sum 1 ~ 10000 : <b> " + sum + "</b>");
+    </script>
+    <br /><br /><br />
+
+    <p>1~100까지 합 (do-while)</p>
+    <script>
+      var x = 1;
+      var sum = 0;
+      do {
+        sum += x;
+        x++;
+      } while (x <= 100);
+      document.write("sum 1 ~ 100 : <b> " + sum + "</b>");
+    </script>
+    <br /><br /><br />
+
+    <p>1~100중 3의 배수 합(break)</p>
+    <script>
+      var x = 1;
+      var sum = 0;
+      while (1) {
+        x += 3;
+        if (x > 100) break;
+        sum += x;
+        document.write(x + " ");
+      }
+      document.write("<p/>");
+      document.write("1부터 100까지 3의 배수 합 : " + sum);
+    </script>
+  </body>
+</html>

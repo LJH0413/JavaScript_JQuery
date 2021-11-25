@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>요일별 todo(switch-case)</title>
+  </head>
+  <body>
+    <script>
+      var day;
+      var w = new Date().getDay();
+      switch (w) {
+        case 1:
+        case 2:
+          text = "HTML5";
+          break;
+        case 3:
+        case 4:
+          text = "JavaScript";
+          break;
+        case 5:
+        case 6:
+          text = "Java";
+          break;
+        case 0:
+          break;
+        default:
+          text = "work out";
+      }
+      document.write("today is " + text);
+    </script>
+  </body>
+</html>

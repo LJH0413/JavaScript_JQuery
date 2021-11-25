@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>변수 재선언시 데이터 값의 변화</title>
+  </head>
+  <body>
+    <script>
+      stdName = "홍길동"; //var 생략가능
+      comGrade = 96;
+      var stdName; //상위 선언한 변수 재선언
+      var comGrade;
+
+      // stdName = 90;
+      // comGrade = "good";
+
+      document.write("학생이름 :" + stdName + "<br>");
+      document.write("컴퓨터 점수 : " + comGrade);
+    </script>
+  </body>
+</html>
