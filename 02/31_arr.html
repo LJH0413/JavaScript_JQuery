@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이차원 배열</title>
+  </head>
+  <body>
+    <script>
+      var data = [
+        [1, 2, 3, 4, 5],
+        [10, 20, 30, 40, 50],
+      ];
+      data[0][4] = 50;
+      data[1][4] = 100;
+
+      document.write("2차원 배열 첫 데이터" + data[0][0] + "<br>");
+      document.write("2차원 배열 마지막 데이터 :" + data[1][4] + "<br>");
+      document.write("2차원 배열 행 길이 : " + data.length + "<br>");
+      document.write("2차원 배열 열 길이 : " + data[0].length + "<br>");
+
+      document.write("<br>");
+
+      var arr0 = [10, 20, 30, 40, 50];
+      var arr1 = [11, 21, 31, 41, 51];
+      var arr2 = [12, 22, 32, 42, 52];
+      var arr3 = [13, 23, 33, 43, 53];
+
+      var allArr = [arr0, arr1, arr2, arr3];
+      var partArr = [arr1, arr3];
+
+      function printAll() {
+        for (var x = 0; x < allArr.length; x++) {
+          for (var y = 0; y < allArr.length; y++) {
+            document.write(arrArr[x][y] + " ");
+          }
+          document.write("<p/>");
+        }
+        document.write("<a href='31_arr.html'>돌아가기</a>");
+      }
+
+      function printPart() {
+        for (var x = 0; x < partArr.length; x++) {
+          for (var y = 0; y < partArr.length; y++) {
+            document.write(partArr[x][y] + " ");
+          }
+          document.write("<p/>");
+        }
+        document.write("<a href='31_arr.html'>돌아가기</a>");
+      }
+    </script>
+    <button type="button" onclick="printAll()">전체 배열</button>
+    <button type="button" onclick="printPart()">홀수 배열</button>
+  </body>
+</html>

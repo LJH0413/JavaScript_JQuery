@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pop & push / shift & unshift</title>
+  </head>
+  <body>
+    <script>
+      var kdata = [
+        "la",
+        "dunk",
+        "jordan",
+        "la to chicago",
+        "부산",
+        "대구",
+        "인천",
+        "대전",
+        "세종",
+      ];
+
+      var p1 = kdata.push("청주", "세종");
+      document.write("데이터 :" + p1 + "<br>");
+      document.write("배열 데이터 :" + kdata + "<br>");
+
+      var p2 = kdata.pop();
+      document.write("데이터 :" + p2 + "<br>");
+      document.write("배열 데이터 :" + kdata + "<br>");
+
+      var s1 = kdata.unshift("대전", "세종");
+      document.write("데이터 :" + s1 + "<br>");
+      document.write("배열 데이터 :" + kdata + "<br>");
+
+      var s2 = kdata.shift();
+      document.write("데이터 :" + s2 + "<br>");
+      document.write("배열 데이터 :" + kdata + "<br>");
+    </script>
+  </body>
+</html>

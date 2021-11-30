@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>indexOf & lastindexOf</title>
+  </head>
+  <body>
+    <script>
+      var data = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+      document.write("배열 데이터 : " + data + "</p>");
+      document.write(
+        "배열 데이터 (처음부터 30) : " + data.indexOf(30) + "</p>"
+      );
+      document.write(
+        "배열 데이터 (마지막부터 30) : " + data.lastIndexOf(30) + "</p>"
+      );
+      document.write(
+        "배열 데이터 (세번째부터 30): " + data.indexOf(30, 3) + "</p>"
+      );
+      document.write(
+        "배열 데이터(처음부터 300) : " + data.indexOf(300) + "</p>"
+      );
+    </script>
+  </body>
+</html>

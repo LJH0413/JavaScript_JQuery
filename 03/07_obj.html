@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>생성자, 함수 활용</title>
+  </head>
+  <body>
+    <p>[lee`s car]</p>
+    <p id="carname1"></p>
+    <p id="carcolor1"></p>
+    <p id="carspeed1"></p>
+    <p id="carspeed6"></p>
+    <p id="carspeed7"></p>
+    <p>[son`s car]</p>
+    <p id="carname2"></p>
+    <p id="carcolor2"></p>
+    <p id="carspeed2"></p>
+    <p id="carspeed8"></p>
+    <p id="carspeed9"></p>
+
+    <script>
+      function Car(name, color, speed) {
+        this.name = name;
+        this.color = color;
+        this.speed = speed;
+        this.speedup = function () {
+          return this.speed + 10;
+        };
+        this.speeddown = function () {
+          return this.speed - 10;
+        };
+      }
+
+      var leecar = new Car("sonata", "blue", 120);
+      var soncar = new Car("kona", "black", 80);
+
+      // lee car
+      var cname = document.getElementById("carname1");
+      cname.textContent = "car name :" + leecar.name;
+      var ccolor = document.getElementById("carcolor1");
+      ccolor.textContent = "car color :" + leecar.color;
+      var cspeed = document.getElementById("carspeed1");
+      cspeed.textContent = "car speed :" + leecar.speed;
+      var upsp = document.getElementById("carspeed6");
+      upsp.textContent = "speed up : " + leecar.speedup();
+      var dsp = document.getElementById("carspeed7");
+      dsp.textContent = "speed up : " + leecar.speeddown();
+
+      // son car
+      var cname = document.getElementById("carname2");
+      cname.textContent = "car name :" + soncar.name;
+      var ccolor = document.getElementById("carcolor2");
+      ccolor.textContent = "car color :" + soncar.color;
+      var cspeed = document.getElementById("carspeed2");
+      cspeed.textContent = "car speed :" + soncar.speed;
+      var upsp = document.getElementById("carspeed8");
+      upsp.textContent = "speed up : " + soncar.speedup();
+      var dsp = document.getElementById("carspeed9");
+      dsp.textContent = "speed up : " + soncar.speeddown();
+    </script>
+  </body>
+</html>

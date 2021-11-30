@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Slice, Splice</title>
+  </head>
+  <body>
+    <script>
+      var kdata = [
+        "la",
+        "dunk",
+        "jordan",
+        "la to chicago",
+        "부산",
+        "대구",
+        "인천",
+        "대전",
+        "세종",
+      ];
+
+      var str1 = kdata.slice(0, 4);
+      var str2 = kdata.slice(2, -1);
+      var str3 = kdata.slice(-4, -2);
+
+      document.write("부분 배열1 : " + str1 + "</p>");
+      document.write("부분 배열2 : " + str2 + "</p>");
+      document.write("부분 배열3 : " + str3 + "</p>");
+
+      var s1 = kdata.splice(1, 2);
+      var s2 = kdata.splice(1, 1, "강릉", "세종");
+      var s3 = kdata.splice(2, Number.MAX_VALUE);
+
+      document.write("삭제 데이터1 : " + s1 + "</p>");
+      document.write("남은 배열 : " + kdata + "</p>");
+      document.write("삭제 데이터1 : " + s2 + "</p>");
+      document.write("남은 배열 : " + kdata + "</p>");
+      document.write("삭제 데이터1 : " + s3 + "</p>");
+      document.write("남은 배열 : " + kdata + "</p>");
+    </script>
+  </body>
+</html>

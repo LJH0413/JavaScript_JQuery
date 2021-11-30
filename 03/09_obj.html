@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>배열 객체</title>
+  </head>
+  <body>
+    <p>[car1]</p>
+    <p id="data10"></p>
+    <p id="data20"></p>
+    <p id="data30"></p>
+    <p>[car2]</p>
+    <p id="data11"></p>
+    <p id="data21"></p>
+    <p id="data31"></p>
+    <p>[car3]</p>
+    <p id="data12"></p>
+    <p id="data22"></p>
+    <p id="data32"></p>
+
+    <script>
+      var car = [
+        { name: "sonata", color: "blue", speed: 100 },
+        { name: "jeep", color: "black", speed: 70 },
+        { name: "passt", color: "red", speed: 120 },
+      ];
+
+      for (var i = 0; i < 3; i++) {
+        var cn = document.getElementById("data1" + i);
+        cn.textContent = "car name :" + car[i].name;
+        var cc = document.getElementById("data2" + i);
+        cc.textContent = "car color :" + car[i].color;
+        var cs = document.getElementById("data3" + i);
+        cs.textContent = "car speed :" + car[i].speed;
+      }
+    </script>
+  </body>
+</html>
