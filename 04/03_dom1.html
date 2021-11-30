@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dom attribute</title>
+  </head>
+  <body>
+    <script>
+      var target = document.getElementById("msg");
+
+      var ts = {
+        textStyle: function () {
+          var target = document.getElementById("msg");
+          target.style.color = "blue";
+          target.style.fontSize = "30px";
+          target.style.fontStyle = "italic";
+        },
+      };
+      function texthidden() {
+        document.getElementById("msg").style.visibility = "hidden";
+      }
+
+      function textvisible() {
+        document.getElementById("msg").style.visibility = "visible";
+      }
+    </script>
+
+    <p id="msg">문서 객체 스타일 변경</p>
+    <input type="button" onclick="ts.textStyle()" value="텍스트 스타일 변경" />
+    <input type="button" value="hidden" onclick="texthidden()" />
+    <input type="button" value="visible" onclick="textvisible()" />
+  </body>
+</html>

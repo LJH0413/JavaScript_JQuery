@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        $("button.move").click(function () {
+          $("img").animate({
+            left: "300px",
+            height: "300px",
+            width: "350px",
+          });
+        });
+
+        $("button.init").click(function () {
+          $("img").animate({
+            left: "0px",
+            height: "100px",
+            width: "130px",
+          });
+        });
+
+        $("#out").click(function () {
+          $("img").fadeOut("slow");
+        });
+
+        $("#in").click(function () {
+          $("img").fadeIn("slow");
+        });
+
+        $("#toggle").click(function () {
+          $("img").fadeToggle("slow");
+        });
+
+        $("#to50").click(function () {
+          $("img").fadeTo("slow", 0.5);
+        });
+
+        $("#to10").click(function () {
+          $("img").fadeTo("slow", 0.1);
+        });
+
+        $("#to100").click(function () {
+          $("img").fadeTo("slow", 1.0);
+        });
+
+        $("#panel").click(function () {
+          $("#panel").slideUp("fast");
+        });
+
+        $("#slide").click(function () {
+          $("#panel").slideDown(5000);
+        });
+
+        $("#panel").click(function () {
+          $("#panel").slideToggle("slow");
+        });
+        $("#stop").click(function () {
+          $("#panel").stop();
+        });
+      });
+    </script>
+    <style>
+      #slide,
+      #panel,
+      #flip {
+        padding: 5px;
+        text-align: center;
+        background-color: powderblue;
+        border: solid 1px #c3c3c3;
+      }
+
+      #panel {
+        padding: 70px;
+        display: none;
+        background-color: #ffff00;
+      }
+    </style>
+  </head>
+  <body>
+    <button class="move">확대</button>
+    <button class="init">축소</button>
+
+    <button id="out">fadeOut</button>
+    <button id="in">fadeIn</button>
+    <button id="toggle">fadeToggle</button>
+    <button id="to50">opacity 50%</button>
+    <button id="to10">opacity 90%</button>
+    <button id="to100">opacity 0%</button>
+    <p></p>
+    <img
+      src="/05/pic1.jpg"
+      width="130"
+      height="100"
+      style="position: relative"
+    />
+    <br /><br /><br /><br />
+
+    <div id="slide">[today]</div>
+    <div id="panel">today study Jquery <br />get your own code</div>
+    <div id="flip">Toggle slide</div>
+    <p></p>
+    <button id="stop">stop sliding</button>
+  </body>
+</html>

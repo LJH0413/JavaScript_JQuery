@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문서객체 생성 요소 추가</title>
+  </head>
+  <body>
+    <script>
+      function add() {
+        var header = document.createElement("h3");
+        var textNode = document.createTextNode("내이름은 홍길동.");
+
+        header.appendChild(textNode);
+        document.body.appendChild(header);
+      }
+    </script>
+
+    <input type="button" value="click!" onclick="add()" />
+  </body>
+</html>
