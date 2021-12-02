@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>method chain</title>
+    <!-- 매소드 체인 -->
+    <!-- 매소드들의 반환값으로 자기 자신을 반환해야함 -->
+    <!-- 연속적인 제어 가능 -->
+    <script src="/JavaScript_JQuery/liveCoding/jQuery/jquery-3.2.1.min.js"></script>
+
+    <!-- <script>
+      var tutorial = document.getElementById("tutorial");
+      tutorial.setAttribute("href", "http://jquery.org");
+      tutorial.setAttribute("target", "_blank");
+      tutorial.style.color = "red";
+    </script> -->
+  </head>
+  <body>
+    <h2>method chain</h2>
+    <a id="tutorial" href="http://jquery.com" target="_self">jQuery</a>
+    <script type="text/javascript">
+      jQuery("#tutorial")
+        .attr("href", "http://jquery.org")
+        .attr("target", "_blank")
+        .css("color", "red");
+    </script>
+
+    <br /><br /><br /><br />
+
+    <h2>탐색</h2>
+    <ul class="first">
+      <li class="foo">list item 1</li>
+      <li>list item 2</li>
+      <li class="bar">list item 3</li>
+    </ul>
+
+    <ul class="second">
+      <li class="foo">list item 1</li>
+      <li>list item 2</li>
+      <li class="bar">list item 3</li>
+    </ul>
+    <script type="text/javascript">
+      $("ul.first")
+        .find(".foo")
+        .css("background-color", "red")
+        .end()
+        .find(".bar")
+        .css("background-color", "green");
+    </script>
+  </body>
+</html>
