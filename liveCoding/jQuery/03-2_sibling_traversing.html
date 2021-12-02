@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>형제 요소 탐색</title>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script>
+      $(function () {
+        $("#btn__s").on("click", function () {
+          $("h4")
+            .siblings() // <h4>요소의 형제 요소를 모두 선택함.
+            .css({ border: "2px solid red" }); // 해당 요소의 CSS 스타일을 변경함.
+        });
+      });
+
+      $(function () {
+        $("#btn__n").on("click", function () {
+          $("h4")
+            .next() // <h4>요소의 바로 다음 형제 요소를 선택함.
+            .css({ border: "2px solid blue" }); // 해당 요소의 CSS 스타일을 변경함.
+        });
+      });
+
+      $(function () {
+        $("#btn__na").on("click", function () {
+          $("h4")
+            .nextAll() // <h4> 요소의 다음에 있는 형제 요소를 모두 선택함.
+            .css({ border: "2px solid green" }); // 해당 요소의 CSS 스타일을 변경함.
+        });
+      });
+
+      $(function () {
+        $("#btn__nu").on("click", function () {
+          // <h4>요소의 형제 요소 중에서 첫 번째 <p>요소의 바로 이전까지의 모든 요소를 선택함.
+          $("h4").nextUntil("p").css({ border: "2px solid purple" }); // 해당 요소의 CSS 스타일을 변경함.
+        });
+      });
+    </script>
+    <style>
+      .container * {
+        display: block;
+        border: 1px solid lightgray;
+        padding: 5px;
+        margin: 15px;
+      }
+
+      #btn__s {
+        color: red;
+      }
+
+      #btn__n {
+        color: blue;
+      }
+
+      #btn__na {
+        color: green;
+      }
+
+      #btn__nu {
+        color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>.siblings() 메소드</h1>
+    <div class="container">
+      <div>div 요소</div>
+      <h2>h2 요소</h2>
+      <h3>h3 요소</h3>
+      <h4>h4 요소 (기준)</h4>
+      <h5>h5 요소</h5>
+      <h6>h6 요소</h6>
+      <p>p 요소</p>
+    </div>
+
+    <button id="btn__s">h4의 형제 요소(siblings)</button>
+
+    <button id="btn__n">h4의 형제 요소(next)</button>
+
+    <button id="btn__na">h4의 형제 요소(nextAll)</button>
+
+    <button id="btn__nu">h4의 형제 요소(nextUntil)</button>
+  </body>
+</html>
+<!-- 
+.siblings()
+선택한 요소의 형제(sibling) 요소 중에서 지정한 선택자에 해당하는 요소를 모두 선택함.
+
+.next()
+선택한 요소의 바로 다음에 위치한 형제 요소를 선택함.
+
+.nextAll()
+선택한 요소의 다음에 위치한 형제 요소를 모두 선택함.
+
+.nextUntil()
+선택한 요소의 형제 요소 중에서 지정한 선택자에 해당하는 요소 바로 이전까지의 요소를 모두 선택함.
+
+.prev()
+선택한 요소의 바로 이전에 위치한 형제 요소를 선택함.
+
+.prevAll()
+선택한 요소의 이전에 위치한 형제 요소를 모두 선택함.
+
+.prevUntil()	선택한 요소의 형제 요소 중에서 지정한 선택자에 해당하는 요소 바로 다음까지의 요소를 모두 선택함.
+ -->

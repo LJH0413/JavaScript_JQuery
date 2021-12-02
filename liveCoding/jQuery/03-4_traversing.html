@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>자식 탐색</title>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script>
+      $(function () {
+        $("#btn__add").on("click", function () {
+          $(".add")
+            .add(".ppp") // 선택한 <li>요소의 집합에 <p>요소를 추가함.
+            .css({ border: "2px solid green" }); // 해당 요소의 CSS 스타일을 변경함.
+        });
+      });
+
+      $(function () {
+        $("#btn__each").on("click", function () {
+          $(".each").each(function () {
+            // 선택한 <li>요소 집합의 각 <li>요소를 선택함.
+            $(this).toggleClass("boldFont"); // 각 <li>요소마다 클래스를 추가하거나 제거함.
+          });
+        });
+      });
+
+      $(function () {
+        $("#btn__chain").on("click", function () {
+          $("#divBox") // id가 "divBox"인 요소의
+            .find("p") // 자손 요소 중에서 <p>요소를 모두 선택하고,
+            .end() // 선택된 요소의 집합을 find() 메소드의 실행 전으로 복원함.
+            .css("border", "2px solid green"); // 따라서 id가 "divBox"인 요소의 CSS 스타일을 설정함.
+        });
+      });
+
+      $(function () {
+        $("button").on("click", function () {
+          // id가 "para"인 요소가 위치할 때 기준이 된 조상 요소를 선택함.
+          $("#para").offsetParent().css("border", "2px solid red"); // 해당 요소의 CSS 스타일을 변경함.
+        });
+      });
+    </script>
+    <style>
+      .boldFont {
+        color: green;
+        font-weight: bold;
+      }
+
+      .container * {
+        display: block;
+        border: 1px solid lightgray;
+        padding: 5px;
+        margin: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>.add() 메소드</h1>
+    <ul>
+      <li class="add">첫 번째 아이템이에요!</li>
+      <li class="add">두 번째 아이템이에요!</li>
+      <li class="add">세 번째 아이템이에요!</li>
+    </ul>
+    <p class="ppp">첫 번째 단락이에요!</p>
+    <button id="btn__add">li 요소 집합에 p 요소를 추가</button>
+
+    <br /><br /><br />
+
+    <h1>.each() 메소드</h1>
+    <ul>
+      <li class="each">첫 번째 아이템이에요!</li>
+      <li class="each">두 번째 아이템이에요!</li>
+      <li class="each">세 번째 아이템이에요!</li>
+    </ul>
+    <button id="btn__each">클래스 추가 및 제거</button>
+
+    <br /><br /><br />
+
+    <h1>.end() 메소드</h1>
+    <div class="container">
+      <div id="divBox">
+        div 요소
+        <p>p 요소</p>
+      </div>
+    </div>
+    <button id="btn_chain">div 요소 선택</button>
+
+    <br /><br /><br />
+
+    <h1>.offsetParent() 메소드</h1>
+    <div class="container">
+      <div>
+        div 요소
+        <ul style="position: relative">
+          ul 요소
+          <li>li 요소</li>
+          <li>
+            li 요소
+            <p id="para">
+              p 요소 (para)
+              <span>span 요소</span>
+            </p>
+          </li>
+          <li>li 요소</li>
+        </ul>
+      </div>
+    </div>
+
+    <button>요소의 위치 정보</button>
+  </body>
+</html>
+
+<!-- 
+.add()
+선택한 요소의 집합에 전달받은 요소를 추가함.
+
+.addBack()
+선택한 요소의 집합에 바로 전에 선택했던 요소를 추가함.
+
+.each()	
+선택한 요소 집합의 요소마다 전달받은 콜백 함수를 실행함.
+
+.end()
+마지막으로 실행한 메소드의 실행 전 상태로 선택한 요소의 집합을 복원함.
+
+.offsetParent()
+선택한 요소를 위치시킬 때 기준이 되었던 조상 요소를 선택함.
+.contents()
+
+선택한 요소의 자식(child) 요소를 모두 선택함. (텍스트 노드와 주석 노드까지 모두 포함함)
+ -->

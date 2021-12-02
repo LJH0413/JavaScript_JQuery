@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>position</title>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script>
+      $(function () {
+        $("button").on("click", function () {
+          var str = "";
+          var offsetPosition = $("#para").offset(); // offset() 메소드를 사용해 id가 "para"인 요소의 위치 정보
+          str += "offset() 메소드를 사용하여 구한 p 요소의 위치는<br>";
+          str += "left가 " + offsetPosition.left + "픽셀이고, "; // id가 "para"인 요소의 left 위치를 반환함.
+          str += "top이 " + offsetPosition.top + "픽셀입니다.<br>"; // id가 "para"인 요소의 top 위치를 반환함.
+          var posPosition = $("#para").position(); // position() 메소드를 사용해 id가 "para"인 요소의 위치 정보
+          str += "position() 메소드를 사용하여 구한 p 요소의 위치는<br>";
+          str += "left가 " + posPosition.left + "픽셀이고, "; // id가 "para"인 요소의 left 위치를 반환함.
+          str += "top이 " + posPosition.top + "픽셀입니다."; // id가 "para"인 요소의 top 위치를 반환함.
+          $("#text").html(str);
+        });
+      });
+
+      $(function () {
+        $("button").on("click", function () {
+          $("#divBox").scrollLeft(70); // id가 "divBox"인 요소의 수평 스크롤 바의 위치를 설정함.
+          $("#divBox").scrollTop(200); // id가 "divBox"인 요소의 수직 스크롤 바의 위치를 설정함.
+
+          // id가 "divBox"인 요소의 수평 스크롤 바의 현재 위치를 반환함.
+          var str =
+            "수평 스크롤 바의 현재 위치는 left 방향으로 " +
+            $("#divBox").scrollLeft() +
+            "픽셀이고,<br>";
+          // id가 "divBox"인 요소의 수직 스크롤 바의 현재 위치를 반환함.
+          str +=
+            "수직 스크롤 바의 현재 위치는 top 방향으로 " +
+            $("#divBox").scrollTop() +
+            "픽셀입니다.";
+          $("#text").html(str);
+        });
+      });
+    </script>
+    <style>
+      #divBox {
+        width: 100px;
+        height: 50px;
+        border: 1px solid lightgray;
+        margin: 10px;
+        padding: 5px;
+      }
+
+      #divBox1 {
+        width: 150px;
+        height: 150px;
+        border: 1px solid lightgray;
+        overflow: auto;
+      }
+      #para {
+        font-weight: bold;
+        margin-left: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="divBox">
+      <p id="para">p 요소</p>
+    </div>
+    <button>요소의 위치 정보</button>
+    <p id="text"></p>
+
+    <br /><br /><br />
+
+    <div id="divBox1">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue
+      imperdiet viverra. Donec euismod placerat gravida. Suspendisse placerat
+      commodo lectus, sit amet malesuada libero porta ac. Phasellus egestas
+      laoreet turpis eu fringilla.
+      Quisquetincidunteratinurnaultrices,quiseleifendipsumvolutpat. In ultrices
+      tortor neque, malesuada scelerisque nibh vehicula quis. In quam lacus,
+      dictum quis consectetur in, consequat sit amet arcu. Nullam ac consequat
+      neque. Aliquam semper mollis purus vel tincidunt. Mauris vehicula dictum
+      justo. Nullam congue, felis ut luctus gravida, nunc mi semper metus, sed
+      vestibulum enim magna ut lacus. Pellentesque sed commodo urna. Vivamus sit
+      amet risus ac libero facilisis consequat. Nunc volutpat in ligula id
+      malesuada. Nullam est metus, pretium vitae rhoncus nec, eleifend id leo.
+      Quisque at condimentum ipsum. Aliquam erat volutpat. Donec hendrerit
+      pretium leo vitae faucibus. Proin eget magna sit amet justo egestas
+      pharetra. Suspendisse facilisis laoreet dui, sed lobortis risus dignissim
+      eu. Quisque ac blandit dolor. Donec fringilla lobortis lectus quis cursus.
+      Nullam pulvinar urna non ligula egestas luctus. Praesent vitae egestas
+      orci, at mattis quam. Nunc eu tempor dolor. Aenean lobortis elit ac urna
+      fringilla feugiat non vel ligula. Etiam dictum tortor eget turpis semper,
+      quis euismod libero dictum.
+    </div>
+    <br />
+    <button>스크롤 바의 위치 설정</button>
+    <p id="text"></p>
+  </body>
+</html>

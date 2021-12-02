@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>트리 탐색</title>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script>
+      $(function () {
+        $("#btn__p").on("click", function () {
+          $("p").parent().css({ border: "2px solid red" });
+        });
+      });
+
+      $(function () {
+        $("#btn__div").on("click", function () {
+          $("p").parents("div").css({ border: "2px solid green" });
+        });
+      });
+
+      $(function () {
+        $("#btn__div2").on("click", function () {
+          // <p>요소의 조상 요소 중에서 첫 번째 <div>요소의 바로 이전까지의 요소를 모두 선택함.
+          $("p").parentsUntil("div").css({ border: "2px solid blue" }); // 해당 요소의 CSS 스타일을 변경함.
+        });
+      });
+
+      $("#parents").on("click", function () {
+        // 아이디가 "origin"인 요소의 조상 요소 중에서 <div>요소를 모두 선택함.
+        $("#origin").parents("div").css({ border: "2px solid red" });
+      });
+      $("#closest").on("click", function () {
+        // 아이디가 "origin"인 요소 자신과 조상 요소 중에서 첫 번째 <div>요소를 선택함.
+        $("#origin").closest("div").css({ border: "2px solid green" });
+      });
+    </script>
+    <style>
+      .container * {
+        display: block;
+        border: 1px solid lightgray;
+        padding: 5px;
+        margin: 15px;
+      }
+
+      #btn__p {
+        color: red;
+      }
+
+      #btn__div {
+        color: green;
+      }
+
+      #btn__div2 {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>.트리탐색 매소드</h1>
+    <div class="container">
+      <div>
+        div 요소
+        <ul>
+          ul 요소
+          <li>li 요소</li>
+          <li>
+            li 요소
+            <div id="origin">
+              div 요소 (기준)
+              <span>span 요소</span>
+            </div>
+            <p>
+              p 요소 (기준)
+              <span>span 요소</span>
+            </p>
+          </li>
+          <li>li 요소</li>
+        </ul>
+      </div>
+    </div>
+
+    <button id="btn__p">p의 부모 요소(parent())</button>
+    <button id="btn__div">p의 조상 요소(parents())</button>
+    <button id="btn__div2">p의 조상 요소(parentsUntil())</button>
+
+    <button id="parents">parents() 메소드</button>
+    <button id="closest">closest() 메소드</button>
+  </body>
+</html>
+
+<!-- 
+.parent()
+선택한 요소의 부모(parent) 요소를 선택함.
+
+.parents()	
+선택한 요소의 조상(ancestor) 요소를 모두 선택함.
+
+.parentsUntil()	
+선택한 요소의 조상 요소 중에서 지정한 선택자에 해당하는 요소 바로 이전까지의 요소를 모두 선택함.
+
+.closest()	
+선택한 요소를 포함한 조상 요소 중에서 지정한 선택자에 해당하는 요소 중 가장 첫 번째 요소를 선택함. 
+-->

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>요소의 크기</title>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script>
+      $(function () {
+        $("button").on("click", function () {
+          var str = "";
+          str +=
+            "브라우저 뷰포트의 크기는 " +
+            $(window).width() +
+            "X" +
+            $(window).height() +
+            "입니다.<br>";
+          str +=
+            "HTML 문서의 크기는 " +
+            $(document).width() +
+            "X" +
+            $(document).height() +
+            "입니다.";
+          $("#text").html(str);
+        });
+      });
+
+      $(function () {
+        $("button").on("click", function () {
+          var str = "이 div 요소의 ";
+          // id가 "divBox"인 요소의 크기를 반환함.
+          str +=
+            "크기는 " +
+            $("#divBox").width() +
+            "X" +
+            $("#divBox").height() +
+            "이고,<br>";
+          // id가 "divBox"인 요소의 패딩 영역을 포함한 크기를 반환함.
+          str +=
+            "패딩 영역을 포함한 크기는 " +
+            $("#divBox").innerWidth() +
+            "X" +
+            $("#divBox").innerHeight() +
+            "이고,<br>";
+          // id가 "divBox"인 요소의 패딩 영역과 테두리를 포함한 크기를 반환함.
+          str +=
+            "테두리까지 포함한 크기는 " +
+            $("#divBox").outerWidth() +
+            "X" +
+            $("#divBox").outerHeight() +
+            "이고,<br>";
+          // id가 "divBox"인 요소의 패딩 영역과 테두리, 마진 영역까지 포함한 크기를 반환함.
+          str +=
+            "마진 영역까지 포함한 크기는 " +
+            $("#divBox").outerWidth(true) +
+            "X" +
+            $("#divBox").outerHeight(true) +
+            "입니다.";
+          $("#text1").html(str);
+        });
+      });
+    </script>
+
+    <style>
+      #divBox {
+        width: 400px;
+        height: 110px;
+        border: 5px solid orange;
+        padding: 10px;
+        margin: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>.width()와 .height() 메소드</h1>
+    <button>브라우저 및 문서의 크기 정보</button>
+    <p>브라우저의 크기를 조절해가며 위의 버튼을 눌러보세요!</p>
+    <p id="text"></p>
+
+    <h1>다양한 크기 정보를 반환하는 메소드</h1>
+    <div id="divBox">
+      <p id="text1"></p>
+    </div>
+    <button>요소의 크기 정보</button>
+  </body>
+</html>
+
+<!-- 
+  .width()
+선택한 요소 집합의 첫 번째 요소의 너비를 반환하거나, 선택된 요소의 너비를 인수로 전달받은 값으로 설정함.
+
+.height()
+선택한 요소 집합의 첫 번째 요소의 높이를 반환하거나, 선택된 요소의 높이를 인수로 전달받은 값으로 설정함.
+
+.innerWidth()	
+선택한 요소 집합의 첫 번째 요소의 너비에 패딩 영역을 포함한 너비를 반환함.
+
+.innerHeight()	
+선택한 요소 집합의 첫 번째 요소의 높이에 패딩 영역을 포함한 높이를 반환함.
+
+.outerWidth()	
+선택한 요소 집합의 첫 번째 요소의 너비에 패딩 영역과 테두리를 포함한 너비를 반환함.
+또한, 인수로 true를 전달받으면 마진 영역까지 포함한 너비를 반환함.
+
+.outerHeight()	
+선택한 요소 집합의 첫 번째 요소의 높이에 패딩 영역과 테두리를 포함한 높이를 반환함.
+또한, 인수로 true를 전달받으면 마진 영역까지 포함한 높이를 반환함.
+ -->
