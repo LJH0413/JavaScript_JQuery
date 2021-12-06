@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery-3.2.1.min.js"></script>
+    <script>
+      $(function () {
+        //1, 클릭 이벤트
+        $("#alertBtn").click(function () {
+          alert("클릭!");
+        });
+      });
+
+      $(function () {
+        //1, 검색 버튼 클릭시 select 태그 값 + text 값 콘솔로그 출력
+        $("#searchBtn").click(function () {
+          var searchKey = $("#searchKey").val();
+          var searchValue = $("#searchValue").val();
+          console.log("searchKey", searchKey);
+          console.log("searchValue", searchValue);
+        });
+
+        //2, searchValue 태그에 엔터 입력시 select 태그 값 + text 태그의 값 콘솔로그 출력
+        $("#searchValue").keypress(function (event) {
+          // console.log(event.keyCode);
+          if (event.keyCode == 13) {
+            var sk = $("#searchKey").val();
+            var sv = $("#searchValue").val();
+            console.log("searchKey", sk);
+            console.log("searchValue", sv);
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <input type="button" id="alertBtn" value="click" />
+    <br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <div>
+      <select name="" id="searchKey">
+        <option value="first">first</option>
+        <option value="second">second</option>
+        <option value="third">third</option>
+      </select>
+      <input type="text" id="searchValue" />
+      <input type="button" id="searchBtn" value="검색" />
+    </div>
+  </body>
+</html>
