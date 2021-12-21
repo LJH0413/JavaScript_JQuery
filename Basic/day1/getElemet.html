@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+    </ul>
+
+    <ul>
+      <li>HTML</li>
+      <li class="act">CSS</li>
+      <li class="act">JavaScript</li>
+    </ul>
+
+    <ul>
+      <li>HTML</li>
+      <li id="act">CSS</li>
+      <li>JavaScript</li>
+    </ul>
+
+    <script>
+      var ul = document.getElementsByTagName("ul")[0];
+      var lis = ul.getElementsByTagName("li");
+      for (var i = 0; i < lis.length; i++) {
+        lis[i].style.color = "red";
+      }
+
+      var ol = document.getElementsByClassName("act");
+      for (var j = 0; j < ol.length; j++) {
+        ol[j].style.color = "green";
+      }
+
+      var li = document.getElementById("act");
+      li.style.color = "blue";
+    </script>
+  </body>
+</html>
